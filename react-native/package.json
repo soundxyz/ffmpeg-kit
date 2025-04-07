@@ -44,7 +44,7 @@
     "prettier": "^3.0.2",
     "react": "^16.13.1",
     "react-native": "^0.63.4",
-    "release-it": "^16.1.5"
+    "release-it": "^18.1.2"
   },
   "peerDependencies": {
     "react": "*",
