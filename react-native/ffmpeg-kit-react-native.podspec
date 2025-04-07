@@ -3,7 +3,7 @@ require "json"
 package = JSON.parse(File.read(File.join(__dir__, "package.json")))
 
 Pod::Spec.new do |s|
-  s.name         = package["name"]
+  s.name         = "ffmpeg-kit-react-native"
   s.version      = package["version"]
   s.summary      = package["description"]
   s.homepage     = package["homepage"]
@@ -19,7 +19,11 @@ Pod::Spec.new do |s|
   s.default_subspec   = 'https'
 
   s.dependency "React-Core"
-  
+
+  s.source_files      = '**/FFmpegKitReactNativeModule.m',
+                        '**/FFmpegKitReactNativeModule.h'
+
+  s.dependency 'soundxyz-ffmpeg-kit-ios-https', "6.0.2"
 
 #   s.subspec 'min' do |ss|
 #       ss.source_files      = '**/FFmpegKitReactNativeModule.m',
@@ -49,21 +53,12 @@ Pod::Spec.new do |s|
 #       ss.ios.deployment_target = '10'
 #   end
 
-  s.subspec 'https' do |ss|
-      ss.source_files      = '**/FFmpegKitReactNativeModule.m',
-                             '**/FFmpegKitReactNativeModule.h'
-      ss.vendored_frameworks = [
-        "Framework/ffmpegkit.xcframework",
-        "Framework/libavcodec.xcframework",
-        "Framework/libavdevice.xcframework",
-        "Framework/libavfilter.xcframework",
-        "Framework/libavformat.xcframework",
-        "Framework/libavutil.xcframework",
-        "Framework/libswresample.xcframework",
-        "Framework/libswscale.xcframework",
-      ]
-      ss.ios.deployment_target = '12.1'
-  end
+#   s.subspec 'https' do |ss|
+#       ss.source_files      = '**/FFmpegKitReactNativeModule.m',
+#                              '**/FFmpegKitReactNativeModule.h'
+#       ss.dependency 'ffmpeg-kit-ios-https', "6.0"
+#       ss.ios.deployment_target = '12.1'
+#   end
 
 #   s.subspec 'https-lts' do |ss|
 #       ss.source_files      = '**/FFmpegKitReactNativeModule.m',
