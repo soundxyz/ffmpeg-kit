@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.license      = package["license"]
   s.authors      = package["author"]
 
-  s.platform          = :ios
+  s.platform          = :ios, "12.1"
   s.requires_arc      = true
   s.static_framework  = true
 
